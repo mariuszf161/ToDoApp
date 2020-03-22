@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Blank Template (TypeScript)",
-    "slug": "ToDoApp",
+    "slug": "todoapp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -11,17 +11,17 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon1.png",
+    "icon": "./src/assets/ico.png",
     "splash": {
-      "image": "./assets/LoadingToDo.png",
+      "image": "./src/assets/LoadingToDo1.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1f1f1f"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "./src/assets/"
     ],
     "ios": {
       "supportsTablet": true
