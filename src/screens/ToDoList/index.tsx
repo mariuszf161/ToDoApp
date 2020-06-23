@@ -1,25 +1,34 @@
-import React, { FC } from 'react';
-import {Text, View } from 'react-native';
+import React, { FC, useState } from 'react';
+import { Button, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
+import Layout from '../../constans/Layout';
+
 
 import Colors from '../../constans/Colors';
 
-const WelcomeText = styled.Text`\
-    margin: 50px 50px;
-    font-size: 30px;
-    color: ${Colors.black};
+import Form from '../../compnents/Form';
+import TodoList from '../../compnents/TodoList';
+
+const HomeView = styled.ScrollView`
+    min-height: 100%;
+    background: ${Colors.lightBlue};
+    padding-top: ${Layout.statusBar + 10}px;
 `;
 
-interface IWellcomeProps {
-    myProps: string;
-}
 
-const ToDoList: FC<IWellcomeProps> = prompt => {
+const TodoListScreen = ({navigation}) => {
+    const [FormViwe, setFromView] = useState<boolean>(false);
+
     return (
-        <View>
-            <WelcomeText>This is a ToDoList page</WelcomeText>
-        </View>
+        <HomeView>
+            {FormViwe ? (
+                <Form switchView={setFromView}/>
+            ) : (
+                <TodoList switchView={setFromView}/>
+            )}
+        </HomeView>
+        
     );
 };
 
-export default ToDoList;
+export default TodoListScreen;

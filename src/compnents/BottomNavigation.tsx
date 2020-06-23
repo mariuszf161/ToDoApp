@@ -3,10 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons} from 'react-native-vector-icons';
 
 import Home from '../screens/Home';
-import ToDoList from '../screens/ToDoList';
-import AddNote from '../screens/AddNote';
 import About from '../screens/About';
 import { TabBarIOS } from 'react-native';
+import TodoListScreen from '../screens/TodoList';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +14,8 @@ const BottomTabs = () => {
          <Tab.Navigator
          initialRouteName="Home"
          tabBarOptions={{
-             activeTintColor: '#e91e63'
+             activeTintColor: '#0066FF',
+
          }}
          >
              <Tab.Screen
@@ -28,26 +28,15 @@ const BottomTabs = () => {
                     )
                 }}
             />
-            <Tab.Screen 
-                name="ToDoList" 
-                component={ToDoList}
-                options={{
-                    tabBarLabel: 'ToDo List',
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="playlist-check" color={color} size={size}/>
-                    )
-                }}
-            />
             <Tab.Screen
                 name="AddNote"
-                component={AddNote}
+                component={TodoListScreen}
                 options={{
                     tabBarLabel: 'Create Note',
                     tabBarIcon: ({ color, size}) => (
                         <MaterialCommunityIcons name="plus" color={color} size={size}/>
                     )
                 }}
-
             />
             <Tab.Screen
                 name="About"
@@ -59,10 +48,7 @@ const BottomTabs = () => {
                     )
                 }}
             />
-
-
          </Tab.Navigator>
     )
-
 }
 export default BottomTabs
